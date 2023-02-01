@@ -1,15 +1,29 @@
-const express = require("express");
-const app = express();
+const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
 // create a schema
 const userSchema = new mongoose.Schema({
-  username: String,
-  required: true,
-  email: String,
-  required: true,
-  password: String,
-  required: true,
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+});
+
+// hash user password before saving into database
+userSchema.pre("save", async function (next) {
+  const salt = await bcrypt.genSalt();
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
 });
 
 // create a model
