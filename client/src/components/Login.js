@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button, Checkbox, Typography } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 function Login() {
@@ -7,6 +7,7 @@ function Login() {
     <div>
       {/* form from antd */}
       <Form name="normal_login" className="login-form">
+        <Typography.Title level={2}>Login</Typography.Title>
         <Form.Item
           name="username"
           rules={[{ required: true, message: "Please input your Username!" }]}
@@ -41,10 +42,11 @@ function Login() {
             type="primary"
             htmlType="submit"
             className="login-form-button"
+            block
           >
             Log in
           </Button>
-          Or <a href="">register now!</a>
+          Or <a href="/register">register now!</a>
         </Form.Item>
       </Form>
     </div>
