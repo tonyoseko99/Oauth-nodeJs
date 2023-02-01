@@ -1,0 +1,24 @@
+{
+  "name": "oauth-nodejs",
+  "version": "1.0.0",
+  "description": "A user auth application",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonyoseko99/Oauth-nodeJs.git"
+  },
+  "author": "Tonny Oseko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonyoseko99/Oauth-nodeJs/issues"
+  },
+  "homepage": "https://github.com/tonyoseko99/Oauth-nodeJs#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
